@@ -18,29 +18,44 @@ customElements.define('x-frame-bypass', class extends HTMLIFrameElement {
 		this.srcdoc = `<html>
 <head>
 	<style>
-	.loader {
-		position: absolute;
-		top: calc(50% - 25px);
-		left: calc(50% - 25px);
-		width: 50px;
-		height: 50px;
-		background-color: #333;
-		border-radius: 50%;  
-		animation: loader 1s infinite ease-in-out;
+    .loader {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+	.loader div {
+      margin:auto;
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid #3498db;
+	  width: 120px;
+	  height: 120px;
+	  -webkit-animation: spin 2s linear infinite; /* Safari */
+	  animation: spin 2s linear infinite;
 	}
-	@keyframes loader {
-		0% {
-		transform: scale(0);
-		}
-		100% {
-		transform: scale(1);
-		opacity: 0;
-		}
+	.loader h2 {
+	  text-align:center;
+	}
+
+	/* Safari */
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
 	}
 	</style>
 </head>
-<body>
-	<div class="loader"></div>
+<body>	
+<div class="loader">
+    	<div></div>
+	<h2 class="loader_text">Loading Iframe</h2>
+</div>
 </body>
 </html>`
 		this.fetchProxy(url, options, 0).then(res => res.text()).then(data => {
