@@ -1,6 +1,7 @@
 # X-Frame-Bypass
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/x-frame-bypass)
+[![pages-build-deployment](https://github.com/franck403/x-frame-bypass/actions/workflows/pages/pages-build-deployment/badge.svg?branch=master)](https://github.com/franck403/x-frame-bypass/actions/workflows/pages/pages-build-deployment)
 
 X-Frame-Bypass is a [Web Component](https://www.webcomponents.org/introduction), specifically a [Customized Built-in Element](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), which extends an IFrame to bypass the [`X-Frame-Options: deny/sameorigin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) response header. Normally such headers prevent embedding a web page in an `<iframe>` element, but X-Frame-Bypass is using a CORS proxy to allow this.
 
