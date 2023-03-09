@@ -54,7 +54,7 @@ customElements.define('x-frame-bypass', class extends HTMLIFrameElement {
 <body>	
 <div class="loader">
     	<div></div>
-	<h2 class="loader_text">Loading Iframe</h2>
+	<h2 class="loader_text">Loading Website</h2>
 </div>
 </body>
 </html>`
